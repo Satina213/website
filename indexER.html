@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="stylesER.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script defer src="helperER.js"></script>
+        <title>Elden Ring Stats</title>
+    </head>
+
+    <!-- Head and Body -->
+
+    <body>
+        <div class="bigText">
+            <h1>Elden Ring Stats</h1>
+        </div>
+        <h3>My current stats:</h3>
+        <div class="container text-center">
+            <form id="statsForm">
+                <!-- Vigor -->
+                <div class="gray-background">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            Vigor
+                        </div>
+                        <div class="col">
+                            <input 
+                                type="number" 
+                                id="vigor" 
+                                name="vigor" 
+                                min="1" 
+                                max="99" 
+                                value="10" 
+                                required
+                            >
+                        </div>
+                    </div>
+                </div>
+                <!-- Mind -->
+                <div class="row align-items-center">
+                    <div class="col">
+                      Mind
+                    </div>
+                    <div class="col">
+                        <input 
+                            type="number" 
+                            id="mind" 
+                            name="mind" 
+                            min="1" 
+                            max="99" 
+                            value="10" 
+                            required
+                        >
+                    </div>
+                </div>
+                <!-- Endurance -->
+                <div class="gray-background">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            Endurance
+                        </div>
+                        <div class="col">
+                            <input 
+                                type="number" 
+                                id="endurance" 
+                                name="endurance" 
+                                min="1" 
+                                max="99" 
+                                value="10" 
+                                required
+                            >
+                        </div>
+                    </div>
+                </div>
+                <!-- Strength -->
+                <div class="row align-items-center">
+                    <div class="col">
+                    Strength
+                    </div>
+                    <div class="col">
+                        <input 
+                            type="number" 
+                            id="strength" 
+                            name="strength" 
+                            min="1" 
+                            max="99" 
+                            value="10" 
+                            required
+                        >
+                    </div>
+                </div>
+                <!-- Dexterity -->
+                <div class="gray-background">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            Dexterity
+                        </div>
+                        <div class="col">
+                            <input 
+                                type="number" 
+                                id="dexterity" 
+                                name="dexterity" 
+                                min="1" 
+                                max="99" 
+                                value="10" 
+                                required
+                            >
+                        </div>
+                    </div>
+                </div>
+                <!-- Intelligence -->
+                <div class="row align-items-center">
+                    <div class="col">
+                      Intelligence
+                    </div>
+                    <div class="col">
+                        <input 
+                            type="number" 
+                            id="intelligence" 
+                            name="intelligence" 
+                            min="1" 
+                            max="99" 
+                            value="10" 
+                            required
+                        >
+                    </div>
+                </div>
+                <!-- Faith -->
+                <div class="gray-background">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            Faith
+                        </div>
+                        <div class="col">
+                            <input 
+                                type="number" 
+                                id="faith" 
+                                name="faith" 
+                                min="1" 
+                                max="99" 
+                                value="10" 
+                                required
+                            >
+                        </div>
+                    </div>
+                </div>
+                <!-- Arcane -->
+                <div class="row align-items-center">
+                    <div class="col">
+                    Arcane
+                    </div>
+                    <div class="col">
+                        <input 
+                            type="number" 
+                            id="arcane" 
+                            name="arcane" 
+                            min="1" 
+                            max="99" 
+                            value="10" 
+                            required
+                        >
+                    </div>
+                </div>
+                <!-- Submit Button -->
+                <div>
+                    <button type="submit">Calculate Your Stats</button>
+                </div>
+            </form>
+        </div>
+        <div class="container text-center">
+            <div class="row align-items-center">
+                <div class="col">
+                    <div class="bigText">
+                        <!-- <h1>Your result</h1> -->
+                        <h1><div id="statTotal"></div></h1>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="bigText">
+                        <!-- <h1>Your health</h1> -->
+                        <h1><div id="healthTotal"></div></h1>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="bigText">
+                        <!-- <h1>Your mana</h1> -->
+                        <h1><div id="manaTotal"></div></h1>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="bigText">
+                        <!-- <h1>Your Stamina</h1> -->
+                        <h1><div id="staminaTotal"></div></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
