@@ -12,8 +12,21 @@ document.getElementById('statsForm').addEventListener('submit', function(event) 
         faith: parseInt(document.getElementById('faith').value),
         arcane: parseInt(document.getElementById('arcane').value),
     };
+
+    let medallionBoost = 0;
+    if (document.getElementById('crimson0').checked) {
+        medallionBoost = 6; // 6% boost for base
+    } else if (document.getElementById('crimson1').checked) {
+        medallionBoost = 7; // 7% boost for +1
+    } else if (document.getElementById('crimson2').checked) {
+        medallionBoost = 8; // 8% boost for +2
+    } else if (document.getElementById('crimson3').checked) {
+        medallionBoost = 10; // 10% boost for +3
+    }
+
     // //TODO impliment the correct functions for vigor and mind
     // *** VIGOR *** lvl1 = 300
+    // medallion is 6/7/8/10 % more health
     // Level 1 - 25 --> 300 + 500*(((Lvl - 1) / 24)^1.5)
     // Level 26 - 40 --> 800 + 650*(((Lvl - 25) / 15)^1.1)
     // Level 41 - 60 --> 1450 + 450*(1 - (1 - ((Lvl - 40) / 20))^1.2)
@@ -54,6 +67,10 @@ document.getElementById('statsForm').addEventListener('submit', function(event) 
     }   else if (stats.vigor <= 99) {
         healthTotal = Math.floor(1900 + 200*(1 - (1 - ((stats.vigor - 60) / 39))**1.2))
     }
+    // Apply medallion boost
+    if (medallionBoost > 0) {
+        healthTotal = Math.floor(healthTotal * (1 + medallionBoost / 100));
+    }
 
     let manaTotal = 20;
     if (stats.mind <=15)    {
@@ -71,16 +88,16 @@ document.getElementById('statsForm').addEventListener('submit', function(event) 
 
     // Display the result
     const resultDiv = document.getElementById('statTotal');
-    resultDiv.innerHTML = `<p>Total Stats: ${totalStats}</p>`;
+    resultDiv.innerHTML = `<p>${totalStats}</p>`;
 
     const healthDiv = document.getElementById('healthTotal');
-    healthDiv.innerHTML = `<p>Health Total: ${healthTotal}</p>`;
+    healthDiv.innerHTML = `<p>${healthTotal}</p>`;
 
     const manaDiv = document.getElementById('manaTotal');
-    manaDiv.innerHTML = `<p>Mana Total: ${manaTotal}</p>`;
+    manaDiv.innerHTML = `<p>${manaTotal}</p>`;
 
     const staminaDiv = document.getElementById('staminaTotal');
-    staminaDiv.innerHTML = `<p>Stamina Total: ${staminaTotal}</p>`;
+    staminaDiv.innerHTML = `<p>${staminaTotal}</p>`;
 
 
 });
